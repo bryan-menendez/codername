@@ -13,11 +13,11 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
-Route::get('/customers', "CustomersController@list");
+Route::get('/customers', "CustomersController@list")->name('customers');
 Route::post('/customers', "CustomersController@insert");
