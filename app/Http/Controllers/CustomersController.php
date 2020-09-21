@@ -19,7 +19,7 @@ class CustomersController extends Controller
         //   'inactiveCustomers' => $inact
         //]);
 
-        return view('/customers', compact('activeCustomers', 'inactiveCustomers'));
+        return view('internals/customers', compact('activeCustomers', 'inactiveCustomers'));
     }
 
     public function insert()
