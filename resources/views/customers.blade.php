@@ -1,14 +1,9 @@
 @extends('internals/layout')
-@section('title', 'customerz');
+@section('title', 'customerz')
 
 @section('content')
     
-<div class="row">
-    <div class="col-12">
-        <h1>CUSTOMERS</h1>
-    </div>
-</div>
-
+<h1>CUSTOMERS</h1>
 
 <div class="row">
     <div class="col-12">
