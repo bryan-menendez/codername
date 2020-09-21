@@ -20,8 +20,11 @@
                 <a class="nav-link" href="{{ route('contact') }}">touch me</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('customers') }}">customeame</a>
+                <!--<a class="nav-link" href="{{ route('customers') }}">customeame</a> -->
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('dummys') }}">dum dum dum</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
@@ -29,8 +32,8 @@
             </div>
           </nav>
 
-
           @yield('content')
+
         </div>
         
 
