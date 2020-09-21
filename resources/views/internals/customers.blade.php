@@ -1,5 +1,5 @@
 @extends('internals/layout')
-@section('title', 'loscocos');
+@section('title', 'customerz');
 
 @section('content')
     

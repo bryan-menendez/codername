@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>HOLA k tal</h1>
-<p>cosah importantes</p>
+<h1>YOU TOUCH THE BUTTON</h1>
+<p>but nothing happens</p>
 
 @endsection
