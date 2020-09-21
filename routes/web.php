@@ -19,5 +19,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/dummys', "DummysController@list")->name('dummys');
+
 Route::get('/customers', "CustomersController@list")->name('customers');
 Route::post('/customers', "CustomersController@insert");
