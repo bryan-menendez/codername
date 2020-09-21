@@ -7,7 +7,7 @@
 
 <ol>
     @foreach ($dummys as $d)
-        <li>{{ $d->id}} : {{ $d->name }}</li>
+<li><a href="{{ route('dummys/detail', $d) }}">{{ $d->id}} : {{ $d->name }}</a></li>
     @endforeach
 </ol>
 

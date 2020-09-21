@@ -13,4 +13,11 @@ class DummysController extends Controller
 
         return view('dummys', compact('dummys'));
     }
+
+    public function detail($id)
+    {
+        $dummy = Dummy::findOrFail($id);
+
+        return view('dummys/detail', compact('dummy'));
+    }
 }

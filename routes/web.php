@@ -20,6 +20,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/dummys', "DummysController@list")->name('dummys');
+Route::get('/dummys/{id}', "DummysController@detail")->name('dummys/detail');
 
 Route::get('/customers', "CustomersController@list")->name('customers');
 Route::post('/customers', "CustomersController@insert");
