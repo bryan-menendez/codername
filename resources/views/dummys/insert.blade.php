@@ -6,8 +6,13 @@
 
 <form action="{{ route('dummys/insert') }}" method="post">
     @csrf
-    <input type="text" name="name" id="name"><br>
-    <button type="submit">insertar</button>
+
+    @error('name')
+        <p>falta nomvr3</p>
+    @enderror
+
+    <input type="text" name="name" id="name" value="{{ old('name') }}"><br>
+    <button type="submit" class="btn btn-primary">insertar</button>
 </form>
 
 @endsection

@@ -10,14 +10,32 @@
 @endif
 
 
-<ol>
+<table class="table">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>actions</th>
+    </thead>
+
     @foreach ($dummys as $d)
-        <li><a href="{{ route('dummys/detail', $d) }}">{{ $d->id}} : {{ $d->name }}</a></li>
+    <tr>
+        <td>{{ $d->id }}</td>
+        <td><a href="{{ route('dummys/detail', $d) }}">{{ $d->name }}</a></td>
+        <td>
+            <a href="{{ route('dummys/editView', $d) }}" class="btn btn-warning btn-sm">Editar</a>
+            <form action="{{ route('dummys/delete', $d)}}" method="post" class="d-inline">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+            </form>
+        </td>
+    </tr>
     @endforeach
-</ol>
+</table>
+{{ $dummys->links() }}
 
 <br>
-<a href="{{ route('dummys/insertView') }}">Agregar nuevo</a>
+<a href="{{ route('dummys/insertView') }}" class="btn btn-primary btn-sm">Agregar nuevo</a>
 
 
 @endsection
