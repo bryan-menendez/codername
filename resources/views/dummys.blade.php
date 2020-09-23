@@ -11,10 +11,10 @@
 
 
 <table class="table">
-    <thead>
-        <th>id</th>
-        <th>name</th>
-        <th>actions</th>
+    <thead class="thead-dark">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
     </thead>
 
     @foreach ($dummys as $d)
