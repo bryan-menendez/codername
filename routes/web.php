@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
 Route::get('/dummys', "DummysController@listDummys")->name('listDummys');
 Route::get('/dummys/detail/{id}', "DummysController@detail")->name('dummys/detail');
 Route::get('/dummys/insert', "DummysController@insertView")->name('dummys/insertView');
@@ -29,3 +25,11 @@ Route::delete('/dummys/delete/{id}', "DummysController@delete")->name('dummys/de
 
 Route::get('/customers', "CustomersController@list")->name('customers');
 Route::post('/customers', "CustomersController@insert");
+
+Route::get('/contacts', "ContactController@getIndex")->name('contactGetIndex');
+Route::get('/contacts/list', "ContactController@getList")->name('contactGetList');
+Route::post('/contacts/store', "ContactController@postStore")->name('contactPostStore');
+Route::post('/contacts/update', "ContactController@postUpdate")->name('contactPostUpdate');
+Route::post('/contacts/delete', "ContactController@postDelete")->name('contactPostIndex');
+
+
