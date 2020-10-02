@@ -27,9 +27,10 @@ Route::get('/customers', "CustomersController@list")->name('customers');
 Route::post('/customers', "CustomersController@insert");
 
 Route::get('/contacts', "ContactController@getIndex")->name('contactGetIndex');
+Route::get('/contacts/details/{id?}', "ContactController@getDetails")->name('contactGetDetails');
 Route::get('/contacts/list', "ContactController@getList")->name('contactGetList');
 Route::post('/contacts/store', "ContactController@postStore")->name('contactPostStore');
 Route::post('/contacts/update', "ContactController@postUpdate")->name('contactPostUpdate');
-Route::post('/contacts/delete', "ContactController@postDelete")->name('contactPostIndex');
+Route::post('/contacts/delete', "ContactController@postDelete")->name('contactPostDelete');
 
 

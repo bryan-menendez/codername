@@ -21,13 +21,19 @@ class ContactController extends Controller
 
     public function postStore(Request $request)
     {
-        return Contact::create($request->all());
+        //return Contact::create($request->all());
 
-        // $data = request()->validate([
-        //     'name' => 'required|min:3',
-        //     'phone' => 'required',
-        //     'comment' => ''
-        // ]);
+        $data = request()->validate([
+            'name' => 'required|min:3',
+            'phone' => 'required',
+            'comment' => ''
+        ]);
+        Contact::create($data);
+    }
+
+    public function getDetails($id)
+    {
+        return Contact::find($id);
     }
 
     public function postUpdate(Request $request)

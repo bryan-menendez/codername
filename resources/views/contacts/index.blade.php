@@ -7,26 +7,18 @@
     <div class="col-md-12">
         <div class="clearfix">
             <span>LARAVEL DEL MAL CON JUANITO EL DE LAS CUERIS</span><br>
-            <a class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#modalAddContact">Crear nuevo contacto</a><br>
+            <button class="btn btn-success btn-sm pull-right btnAdd" data-toggle="modal" data-target="#modalAddContact">Crear nuevo contacto</button><br>
         </div>
 
-        <table class="table table-bordered table-striped table-condensed">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>Actions</td>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+        <div id="contactTable">
+            
+        </div>
     </div>
 </div>
 
 @include('contacts/partials/modalAddContact')
 @include('contacts/partials/modalEditContact')
+@include('contacts/partials/modalDeleteContact')
 
 @endsection
 
@@ -34,6 +26,7 @@
 <script type="text/javascript">
     console.log("defining routes...");
     var contactListUrl = '{{route('contactGetList')}}';
+    var contactDetailsUrl = '{{route('contactGetDetails')}}';
 </script>
 
 <script type="text/javascript" src="{{ URL::asset('/js/contact.js') }}"></script>

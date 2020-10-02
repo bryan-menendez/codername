@@ -5,25 +5,36 @@ console.log("loading utils");
 //     submitForm(this);
 // });
 
-function submitForm(form){
-    console.log(form);
+async function submitForm(form){
+    //console.log(form);
     var url = form.action;
     var formData = {};
     
     $(form).find("input[name]").each(function (index, node) {
-        console.log(node.name + ":" + node.value);
+        //console.log(node.name + ":" + node.value);
         formData[node.name] = node.value;
     });
 
-    console.log("form data: ");
-    console.log(formData);
+    //console.log("form data: ");
+    //console.log(formData);
 
-    $.post(url, formData).always(function (data) { //data = returned data
-        console.log("url to post: " + url);    
-        console.log("response: ");
+    const dataset = await $.post(url, formData).always(function (data) { //data = returned data
+        //console.log("url to post: " + url);    
+        console.log("response submitForm: ");
         console.log(data);
         return data;
     });
+}
+
+function setupFormInputs(form, json)
+{
+    for (let key in json) {
+        if (key != "_token" && key != "_method")
+        {
+            $(form).find("input[name="+key+"]").val(json[key]);
+            //console.log(key + ":" + json[key])
+        }
+    }
 }
 
 
