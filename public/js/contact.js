@@ -1,6 +1,6 @@
 $(document).ready(function () {
     console.log('gg');
-    getList();
+    loadContactList();
 
     $('.btnAdd').on("click", function () {
         resetModalInput();
@@ -11,7 +11,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         submitForm(this).then(function(){     
-            getList();
+            loadContactList();
             $('#modalAddContact').modal("hide");
         }).catch(err => {
 
@@ -53,12 +53,12 @@ $(document).ready(function () {
         let response = submitForm(this);
         console.log("response: ");
         console.log(response);
-        getList();
+        loadContactList();
         $('#modalEditContact').modal("hide");
     });
 });
 
-function getList() {
+function loadContactList() {
     $.get(contactListUrl, function (data, state) {
         $("#contactTable").html(data);
     });
