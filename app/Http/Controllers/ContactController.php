@@ -41,7 +41,12 @@ class ContactController extends Controller
         if ($request->has('id'))
         {
             $record = Contact::find($request->input('id'));
-            $record->update($request->all());
+            $data = request()->validate([
+                'name' => 'required|min:3',
+                'phone' => 'required',
+                'comment' => ''
+            ]);
+            $record->update($data);
         }
     }
 

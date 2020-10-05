@@ -16,6 +16,7 @@
                         <label for="phone">Phone</label><input class="form-control input-sm" type="text" name="phone">
                         <label for="comment">Comment</label><input class="form-control input-sm" type="textarea" name="comment">
                     </div>
+                    <div class="msg"></div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary btnUpdate" value="Update" type="submit">Update</button>

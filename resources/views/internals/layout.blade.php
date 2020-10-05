@@ -18,11 +18,11 @@
                 <a class="nav-link" href="{{ route('home') }}"> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('contactGetIndex') }}">touch me</a>
-                </li>
-                <li class="nav-item">
                 <a class="nav-link" href="{{ route('customers') }}">customeame</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('contactGetIndex') }}">KONTAKTS</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('listDummys') }}">dum dum dum</a>
                   </li>

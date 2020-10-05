@@ -37,6 +37,17 @@ function setupFormInputs(form, json)
     }
 }
 
+function resetModalInput() {
+    $('.modal').find('input[name]').each(function () {
+        if ($(this).attr("name") != "_token" && $(this).attr("name") != "_method") {
+            //console.log($(this));
+            $(this).val("");
+        }
+    });
+}
 
+function resetMessages(){
+    $('.msg').html("");
+}
 
 
