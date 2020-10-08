@@ -23,3 +23,12 @@
         @endforeach
     </tbody>
 </table>
+
+<div class="pageList" id="pageList">
+    @if (method_exists($contacts, "links"))
+        {{$contacts->links()}}
+    @endif
+</div>
+
+<meta id="page_id" value="1">
+

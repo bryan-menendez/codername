@@ -3,16 +3,14 @@
 
 @section('content')
 
-<div class="container">
-    <div class="col-md-12">
-        <div class="clearfix">
-            <span>LARAVEL DEL MAL CON JUANITO EL DE LAS CUERIS</span><br>
-            <button class="btn btn-success btn-sm pull-right btnAdd" data-toggle="modal" data-target="#modalAddContact">Crear nuevo contacto</button><br>
-        </div>
+<div class="col-md-12">
+    <div class="clearfix">
+        <span>LARAVEL DEL MAL CON JUANITO EL DE LAS CUERIS</span><br>
+        <button class="btn btn-success btn-sm pull-right btnAdd" data-toggle="modal" data-target="#modalAddContact">Crear nuevo contacto</button><br>
+    </div>
 
-        <div id="contactTable">
-            
-        </div>
+    <div id="contactTable">
+        
     </div>
 </div>
 

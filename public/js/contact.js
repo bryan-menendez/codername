@@ -50,7 +50,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         submitForm(this).then(function(){     
-            loadContactList();
+            loadContactList($('#page_id').attr('value'));
             $('#modalEditContact').modal("hide");
         }).catch(err => {
 
@@ -69,8 +69,14 @@ $(document).ready(function () {
     });
 });
 
-function loadContactList() {
-    $.get(contactListUrl, function (data, state) {
+function loadContactList(page_id = 1) {
+    $.get(contactListUrl + "?page_id=" + page_id, function (data, state) 
+    {
         $("#contactTable").html(data);
+        $('.pageList').on('click', '.page-link', function (event) {
+            event.preventDefault();
+            loadContactList($(this).html());            
+        });
+        $('#page_id').attr('value', page_id);
     });
 }

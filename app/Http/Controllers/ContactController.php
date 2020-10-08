@@ -7,6 +7,7 @@ use App\Contact;
 
 class ContactController extends Controller
 {
+
     public function getIndex()
     {
         return view('contacts/index');
@@ -15,8 +16,16 @@ class ContactController extends Controller
     public function getList()
     {
         $contacts = Contact::all();
+        //$contacts = Contact::paginate(4, ['*'], 'page', 1);
 
-        return view('contacts/partials/contactList', compact($contacts, 'contacts'));
+        return view('contacts/partials/contactList', compact('contacts'));
+    }
+
+    public function getListPage()
+    {
+        $contacts = Contact::paginate(4, ['*'], 'page', request()->get('page_id'));
+
+        return view('contacts/partials/contactList', compact('contacts'));
     }
 
     public function postStore(Request $request)
