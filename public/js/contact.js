@@ -67,6 +67,28 @@ $(document).ready(function () {
             $('#modalEditContact').find(".msg").html(html);
         });
     });
+
+    $('#formDeleteContact').on("submit", function (event) {
+        event.preventDefault();
+
+        submitForm(this).then(function(){
+            loadContactList($('#page_id').attr('value'));
+            $('#modalDeleteContact').modal("hide");
+        }).catch(err => {
+
+            let errors = err.responseJSON.errors;
+            let html = '';
+
+            $.each(errors, function(k,v){
+                $.each( v, function( i, e ){
+                    html += "<p>" + e + "</p>";
+                    console.log( "Index #" + i + ": " + e );
+                  });
+            });
+            
+            $('#modalDeleteContact').find(".msg").html(html);
+        });
+    });
 });
 
 function loadContactList(page_id = 1) {

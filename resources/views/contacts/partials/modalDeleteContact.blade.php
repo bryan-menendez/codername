@@ -14,6 +14,7 @@
                 <div class="modal-body">
                     <p>Are you sure you want to delete this entry?</p>
                     <b><span class="contactData"></span></b>
+                    <div class="msg"></div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger btnDelete" type="submit">Delete</button>
