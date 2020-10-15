@@ -97,7 +97,7 @@ function loadContactList(page_id = 1) {
         $("#contactTable").html(data);
         $('.pageList').on('click', '.page-link', function (event) {
             event.preventDefault();
-            loadContactList($(this).html());            
+            loadContactList($(this).html());
         });
         $('#page_id').attr('value', page_id);
     });

@@ -23,8 +23,8 @@ Route::get('/dummys/edit/{id}', "DummysController@editView")->name('dummys/editV
 Route::put('/dummys/edit/{id}', "DummysController@edit")->name('dummys/edit'); 
 Route::delete('/dummys/delete/{id}', "DummysController@delete")->name('dummys/delete'); 
 
-Route::get('/customers', "CustomersController@list")->name('customers');
-Route::post('/customers', "CustomersController@insert");
+Route::get('/customers', "Customz\CustomersController@list")->name('customers');
+Route::post('/customers', "Customz\CustomersController@insert");
 
 Route::get('/contacts', "ContactController@getIndex")->name('contactGetIndex');
 Route::get('/contacts/details/{id?}', "ContactController@getDetails")->name('contactGetDetails');
@@ -33,4 +33,5 @@ Route::post('/contacts/store', "ContactController@postStore")->name('contactPost
 Route::post('/contacts/update', "ContactController@postUpdate")->name('contactPostUpdate');
 Route::post('/contacts/delete', "ContactController@postDelete")->name('contactPostDelete');
 
+Route::resource('profiles', "ProfileController");
 
